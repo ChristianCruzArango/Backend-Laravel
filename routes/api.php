@@ -19,15 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::namespace('App\\Http\\Controllers\\Codesa')->group(function () {
-    Route::get('/codesa/roles','RolesController@index');
-
+    /* Rol */
+    require app_path('Routes/RoleRoutes.php');
     /*User  */
-    Route::get('/codesa/users','UserController@index');
-    Route::post('/codesa/create/users','UserController@store');
-    Route::get('/codesa/show/users','UserController@show');
-    Route::post('/codesa/update/users','UserController@update');
-    Route::get('/codesa/delete/users','UserController@destroy');
-
+    require app_path('Routes/UserRoutes.php');
 });
 
 
